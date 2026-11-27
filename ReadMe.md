@@ -35,7 +35,7 @@ Au sein du **compte de stockage**, nous créons deux conteneurs : l’un pour le
 **Data Factory** est tout simplement un service destiné à faciliter la création de pipelines de données. Dans le cadre de ce projet, nous l’utilisons de manière assez simple : il s’agit simplement de copier les données du conteneur source vers le conteneur cible, en les plaçant dans le chemin d’accès approprié conformément à la structure spécifiée ci-dessus. Pour ce faire, nous utilisons un script personnalisé afin de créer un chemin d’accès sur mesure en fonction de la date indiquée dans le « Linker » du conteneur cible, qui est un outil permettant de relier les conteneurs ** compteurs du **compte de stockage** aux pipelines **Data Factory**.
 
 ##### Exemple de création d’un Linker :
-![[Screenshot 2026-11-26 at 10-03-46 dawrf - Azure Data Factory.png]]
+![[pics/Screenshot 2026-11-26 at 10-03-46 dawrf - Azure Data Factory.png]]
 
 ### Azure Machine Learning
 Le service principal de notre projet, **Azure Machine Learning**, est un outil permettant de créer des pipelines spécifiquement destinés aux algorithmes d’apprentissage automatique. Il couvre le prétraitement des données, l’ingénierie des caractéristiques, l’entraînement du modèle et son évaluation.
@@ -70,17 +70,17 @@ Nous utilisons tout d’abord la **ressource de données** que nous avons créé
 Ensuite, nous la relions à d’autres modules, en nous basant sur l’ébauche que nous avons rédigée dans le notebook. Nous avons notamment utilisé des modules `Exécuter un script Python`, pour le débogage et l’ingénierie des caractéristiques.
 
 ##### Exemple de module « Execute Python Script » :
-![[Screenshot 2026-11-26 at 17-25-50 Authoring - Azure Machine Learning.png]]
+![[pics/Screenshot 2026-11-26 at 17-25-50 Authoring - Azure Machine Learning.png]]
 
 Nous avons construit le pipeline nœud par nœud. Nous avons choisi la `régression linéaire` comme modèle. Nous l’avons entraîné, évalué, puis enregistré.
 
 Pour exécuter le pipeline, nous avons choisi un **cluster de calcul** sur lequel l’exécuter.
 
 ##### Exemple de sélection d’un cluster de calcul :
-  ![[Screenshot 2026-11-26 at 18-15-27 Authoring - Azure Machine Learning 1.png]]
+  ![[pics/Screenshot 2026-11-26 at 18-15-27 Authoring - Azure Machine Learning 1.png]]
 
 ##### Pipeline final
-![[Screenshot 2026-11-26 at 20-33-21 Authoring - Azure Machine Learning.png]]
+![[pics/Screenshot 2026-11-26 at 20-33-21 Authoring - Azure Machine Learning.png]]
 
 ##### Métriques du modèle :
-![[Screenshot 2026-11-26 at 20-07-50 Pipeline-Created-on-11-26-2026 - Azure Machine Learning.png]]
+![[pics/Screenshot 2026-11-26 at 20-07-50 Pipeline-Created-on-11-26-2026 - Azure Machine Learning.png]]
